@@ -1,0 +1,16 @@
+const closedEmoji = document.querySelector('.closed')
+const openEmoji = document.querySelector('.open')
+
+closedEmoji.addEventListener('click', () => {
+    if(openEmoji.classList.contains('open')) {
+        openEmoji.classList.add('active');
+        closedEmoji.classList.remove('avtive');
+    }
+});
+
+openEmoji.addEventListener('click', () => {
+    if(closedEmoji.classList.contains('closed')) {
+        closedEmoji.classList.add('active');
+        openEmoji.classList.remove('active');
+    }
+});
