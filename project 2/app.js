@@ -21,10 +21,30 @@ let data = [
     },
 ];
 
-const info = document.querySelector('#info');
+const infoContainer = document.querySelector('#info');
 
-let details = data.map(function(item) {
-    return '<div>' + item.name + ' ' + 'is ' + item.age + ' years old 🐒' + '</div>';
-});
+function createRectangles() {
+    data.forEach(function(item) {
+        const rectangle = document.createElement('div');
+        rectangle.classList.add('rectangle');
+        rectangle.innerHTML = '<div class="info">' + item.name + ' ' + 'is ' + item.age + ' years old 🐒' + '</div>';
+        rectangle.addEventListener('click', function() {
+            toggleInfo(rectangle, item);
+        });
+        infoContainer.appendChild(rectangle);
+    });
+}
 
-info.innerHTML = details.join('\n');
+function toggleInfo(rectangle, item) {
+    const infoElement = rectangle.querySelector('.info');
+    if (infoElement.classList.contains('additional-info')) {
+        infoElement.textContent = item.name + ' ' + 'is ' + item.age + ' years old 🐒';
+        infoElement.classList.remove('additional-info');
+    } else {
+        infoElement.textContent = item.name  + ' is fun '+ 'to be around 🎉';
+        infoElement.classList.add('additional-info');
+    }
+}
+
+
+createRectangles();
