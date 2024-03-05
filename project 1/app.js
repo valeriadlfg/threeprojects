@@ -14,3 +14,7 @@ openEmoji.addEventListener('click', () => {
         openEmoji.classList.remove('active');
     }
 });
+
+
+
+
