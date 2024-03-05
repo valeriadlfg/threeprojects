@@ -4,7 +4,7 @@ const openEmoji = document.querySelector('.open')
 closedEmoji.addEventListener('click', () => {
     if(openEmoji.classList.contains('open')) {
         openEmoji.classList.add('active');
-        closedEmoji.classList.remove('avtive');
+        closedEmoji.classList.remove('active');
     }
 });
 
